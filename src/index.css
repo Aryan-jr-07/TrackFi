@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .interactive-card {
+    @apply transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-500/20 active:scale-[0.98];
+  }
+  
+  .interactive-button {
+    @apply relative overflow-hidden transition-all duration-300 ease-out hover:shadow-md hover:shadow-primary-500/20 active:scale-95 
+    before:absolute before:inset-0 before:bg-white/20 before:scale-0 before:opacity-0 before:transition-transform 
+    hover:before:scale-[2.5] hover:before:opacity-100;
+  }
+
+  .fade-in {
+    @apply opacity-0 animate-[fadeIn_0.5s_ease-out_forwards];
+  }
+
+  .bounce-in {
+    @apply opacity-0 animate-[bounceIn_0.5s_cubic-bezier(0.68,-0.55,0.265,1.55)_forwards];
+  }
+
+  .glow-hover {
+    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-primary-500/30;
+  }
+
+  .hover-card {
+    @apply relative transition-all duration-400 ease-smooth
+    hover:scale-[1.02] hover:shadow-xl hover:shadow-primary-500/20
+    hover:z-10 hover:-translate-y-1
+    active:scale-[0.98] active:shadow-md
+    dark:hover:shadow-primary-400/20;
+  }
+
+  .hover-card-content {
+    @apply opacity-0 transition-opacity duration-400 ease-smooth
+    group-hover:opacity-100;
+  }
+
+  .hover-card-icon {
+    @apply absolute transition-all duration-400 ease-smooth
+    group-hover:scale-110 group-hover:text-primary-500
+    dark:group-hover:text-primary-400;
+  }
+
+  .hover-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/5 to-transparent
+    opacity-0 transition-opacity duration-400 ease-smooth
+    group-hover:opacity-100
+    dark:from-white/5;
+  }
+}
